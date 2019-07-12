@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+    "version": "20190712",
+    "name": "Composition n",
+    "default_locale": "en",
+    "description": "Interactive Internet artwork, 2011. Click or tap for a new composition.",
+    "author": "Alexander Christiaan Jacob",
+    "theme_color": "white",
+    "homepage_url": "./",
+    "start_url": "./",
+    "icons": [
+        {
+            "src": "./apple-touch-icon-precomposed.png"
+        }
+    ],
+    "display": "fullscreen"
+}

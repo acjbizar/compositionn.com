@@ -1,6 +1,9 @@
-
+"use strict";
 
 window.onclick = window.onload = window.onresize = init;
+
+var canvas, context, colors, layout;
+var r, g, b;
 
 function init()
 {
@@ -68,17 +71,17 @@ function color()
 
 function blocks()
 {
-    i = 0;
-    d = 160;
-    m = 24;
-    cols = Math.floor(canvas.width / (d+m));
-    rows = Math.floor(canvas.height / (d+m));
+    var i = 0;
+    var d = 160;
+    var m = 24;
+    var cols = Math.floor(canvas.width / (d+m));
+    var rows = Math.floor(canvas.height / (d+m));
     context.fillStyle = "rgb(0,0,0)";
     context.fillRect(0,0,canvas.width,canvas.height);
 
-    for(y = 0; y < rows; ++y)
+    for(var y = 0; y < rows; ++y)
     {
-        for(x = 0; x < cols; ++x)
+        for(var x = 0; x < cols; ++x)
         {
             color();
             context.fillStyle = "rgb(" + r + ", " + g + ", " + b + ")";
@@ -100,9 +103,11 @@ function fGridBlocks()
 
 function fGridLines()
 {
-    room = canvas.height;
-    supermax = Math.round(Math.log(room) / Math.log(2));
-    y = 0;
+    var room = canvas.height;
+    var supermax = Math.round(Math.log(room) / Math.log(2));
+    var y = 0;
+    var max, pow, h;
+
     while(room > 0)
     {
         max = Math.floor(Math.log(room) / Math.log(2));
@@ -121,9 +126,11 @@ function fGridLines()
 
 function fGridStripes()
 {
-    room = canvas.width;
-    supermax = Math.round(Math.log(room) / Math.log(2));
-    x = 0;
+    var room = canvas.width;
+    var supermax = Math.round(Math.log(room) / Math.log(2));
+    var x = 0;
+    var max, pow, w;
+
     while(room > 0)
     {
         max = Math.floor(Math.log(room) / Math.log(2));
@@ -142,14 +149,14 @@ function fGridStripes()
 
 function dotdotdot()
 {
-    i = 0;
-    d = 48;
-    cols = Math.floor(canvas.width / d);
-    rows = Math.floor(canvas.height / d);
+    var i = 0;
+    var d = 48;
+    var cols = Math.floor(canvas.width / d);
+    var rows = Math.floor(canvas.height / d);
 
-    for(y = 1; y < rows; ++y)
+    for(var y = 1; y < rows; ++y)
     {
-        for(x = 1; x < cols; ++x)
+        for(var x = 1; x < cols; ++x)
         {
             color();
             context.fillStyle = "rgb(" + r + ", " + g + ", " + b + ")";
@@ -183,7 +190,7 @@ function allRGB()
 
 function pinkrs()
 {
-    pinks = [
+    var pinks = [
         [0xFF, 0xC0, 0xCB],
         [0xFF, 0xB6, 0xC1],
         [0xFF, 0x69, 0xB4],
@@ -204,7 +211,7 @@ function pinkrs()
         [0xFC, 0x0F, 0xC0]
     ];
 
-    pink1 = Math.round(Math.random() * (pinks.length - 1));
+    var pink1 = Math.round(Math.random() * (pinks.length - 1));
 
     r = pinks[pink1][0];
     g = pinks[pink1][1];
@@ -213,7 +220,7 @@ function pinkrs()
 
 function pinkr()
 {
-    pinks = [
+    var pinks = [
         [0xFF, 0xC0, 0xCB],
         [0xFF, 0xB6, 0xC1],
         [0xFF, 0x69, 0xB4],
@@ -234,8 +241,8 @@ function pinkr()
         [0xFC, 0x0F, 0xC0]
     ];
 
-    pink1 = Math.round(Math.random() * (pinks.length - 1));
-    pink2 = Math.round(Math.random() * (pinks.length - 1));
+    var pink1 = Math.round(Math.random() * (pinks.length - 1));
+    var pink2 = Math.round(Math.random() * (pinks.length - 1));
 
     r = Math.floor(Math.random() * (pinks[pink1][0] - pinks[pink2][0] + 1) + pinks[pink2][0]);
     g = Math.floor(Math.random() * (pinks[pink1][1] - pinks[pink2][1] + 1) + pinks[pink2][1]);
@@ -244,7 +251,7 @@ function pinkr()
 
 function deKleur()
 {
-    kleur = Math.floor(Math.random() * 6);
+    var kleur = Math.floor(Math.random() * 6);
 
     switch(kleur)
     {
