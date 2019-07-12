@@ -1,0 +1,5 @@
+
+AddType text/cache-manifest .appcache
+
+Options +MultiViews
+
