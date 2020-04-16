@@ -1,0 +1,22 @@
+{
+  "name": "compositionn.com",
+  "version": "1.0.0",
+  "description": "Interactive Internet artwork from 2011.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acjbizar/compositionn.com.git"
+  },
+  "keywords": [
+    "art"
+  ],
+  "author": "ACJ",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/acjbizar/compositionn.com/issues"
+  },
+  "homepage": "https://github.com/acjbizar/compositionn.com#readme"
+}
