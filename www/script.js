@@ -19,7 +19,7 @@ function init()
     draw();
 
     canvas.ontouchstart = init;
-};
+}
 
 function draw()
 {
