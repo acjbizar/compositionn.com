@@ -1,7 +1,6 @@
 "use strict";
 
 window.onload = init;
-window.onclick = clickEvent;
 window.onresize = resizeEvent;
 
 var canvas, context, colors, layout;
@@ -20,7 +19,22 @@ function init()
 
     draw();
 
-    canvas.ontouchstart = draw;
+    canvas.addEventListener('click', clickEvent);
+    canvas.addEventListener('touchstart', touchEvent);
+}
+
+function clickEvent(e)
+{
+    e.preventDefault();
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    context.restore();
+
+    colors = Math.random();
+    layout = Math.random();
+
+    draw();
 }
 
 function resizeEvent()
@@ -35,8 +49,10 @@ function resizeEvent()
     draw();
 }
 
-function clickEvent()
+function touchEvent(e)
 {
+    e.preventDefault();
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     context.restore();
