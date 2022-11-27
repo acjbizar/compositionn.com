@@ -1,6 +1,8 @@
 "use strict";
 
-window.onclick = window.onload = window.onresize = init;
+window.onload = init;
+window.onclick = clickEvent;
+window.onresize = resizeEvent;
 
 var canvas, context, colors, layout;
 var r, g, b;
@@ -18,7 +20,31 @@ function init()
 
     draw();
 
-    canvas.ontouchstart = init;
+    canvas.ontouchstart = draw;
+}
+
+function resizeEvent()
+{
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    context.restore();
+
+    colors = Math.random();
+    layout = Math.random();
+
+    draw();
+}
+
+function clickEvent()
+{
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    context.restore();
+
+    colors = Math.random();
+    layout = Math.random();
+
+    draw();
 }
 
 function draw()
